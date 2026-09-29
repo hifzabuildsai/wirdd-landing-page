@@ -81,7 +81,7 @@ export default function Home() {
         </div>
         <div className="privacy-copy">
           <p>The tester app asks Android for <strong>on-device Arabic speech recognition</strong>. It uses text results in memory to count the phrase. Wirdd does not save raw audio or transcripts, and the tester app does not require an account or contact an app server for its core session flow.</p>
-          <p>Voice counting requires a compatible Android device with an installed Arabic offline speech model. If that capability is unavailable, manual counting remains available. Recognition accuracy and background operation have not yet passed physical device testing.</p>
+          <p>Voice counting requires Android 13 or newer and an installed Arabic on-device speech model. On older Android versions, or if that capability is unavailable, manual counting remains available. Recognition accuracy and background operation have not yet passed physical device testing.</p>
           <p>Counts, session times, and optional mood are stored in local SQLite. This website sends a waitlist email to Kit only when the waitlist is configured and you choose to submit it.</p>
         </div>
       </section>
