@@ -1,0 +1,40 @@
+.site-shell { max-width: 1440px; margin: auto; position: relative; z-index: 1; }
+.site-header { padding: 28px clamp(20px, 5vw, 72px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(200,168,75,.15); gap: 20px; }
+.wordmark { color: #c8a84b; font: 30px Amiri, serif; text-decoration: none; white-space: nowrap; }
+.wordmark span { color: #f5f0e8; font: 23px "Cormorant Garamond", serif; margin-left: 8px; }
+nav { display: flex; gap: clamp(10px, 3vw, 36px); flex-wrap: wrap; }
+nav a, footer a { color: #c6beab; text-decoration: none; font-size: 13px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid #e4cc84; outline-offset: 4px; }
+.hero { min-height: 640px; padding: 90px clamp(20px, 5vw, 72px); display: grid; grid-template-columns: minmax(0,1.2fr) minmax(260px,.8fr); align-items: center; gap: 50px; }
+.eyebrow { font-size: 11px; color: #c8a84b; letter-spacing: .2em; font-weight: 500; }
+.arabic { color: #c8a84b; font: 32px Amiri, serif; margin: 38px 0 8px; }
+h1,h2,h3 { font-family: "Cormorant Garamond", serif; font-weight: 400; }
+h1 { font-size: clamp(52px, 7vw, 104px); line-height: .98; margin: 0 0 32px; }
+h1 em { color: #e4cc84; font-weight: 300; }
+h2 { font-size: clamp(40px, 5vw, 66px); line-height: 1.04; margin: 12px 0 32px; }
+h3 { font-size: 32px; margin: 10px 0; }
+.intro { font-size: 18px; line-height: 1.8; color: #b7b0a2; max-width: 570px; }
+.primary-link { display: inline-flex; gap: 34px; align-items: center; background: #c8a84b; color: #080910; padding: 16px 24px; text-decoration: none; margin-top: 24px; font-weight: 500; border-radius: 4px; }
+.hero-note { color: #9a9485; font-size: 13px; line-height: 1.6; max-width: 500px; margin-top: 22px; }
+.hero-art { text-align: center; }
+.hero-art > p { font: italic 26px "Cormorant Garamond", serif; color: #b7ae94; margin-top: 30px; }
+.orbit { border-radius: 50%; display: grid; place-items: center; }
+.orbit-outer { aspect-ratio: 1; max-width: 410px; margin: auto; border: 1px solid rgba(200,168,75,.22); box-shadow: 0 0 100px rgba(200,168,75,.06), inset 0 0 80px rgba(200,168,75,.04); }
+.orbit-inner { width: 78%; aspect-ratio: 1; border: 1px solid rgba(200,168,75,.4); }
+.orbit-center { width: 72%; aspect-ratio: 1; border-radius: 50%; background: #13151f; border: 1px solid #c8a84b; display: flex; flex-direction: column; justify-content: center; color: #e4cc84; }
+.orbit-center span { font: 72px Amiri, serif; line-height: 1.3; }
+.orbit-center small { letter-spacing: .25em; font-size: 9px; }
+.section { padding: 100px clamp(20px, 5vw, 72px); border-top: 1px solid rgba(200,168,75,.15); }
+.card-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+.card { background: #0e1018; border: 1px solid rgba(200,168,75,.18); border-radius: 12px; padding: 32px; }
+.card p:last-child, .privacy-copy p, .testing-section > p { font-size: 16px; line-height: 1.75; color: #b7b0a2; }
+.privacy-section { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; background: #0e1018; }
+.privacy-copy strong { color: #e4cc84; font-weight: 500; }
+.testing-section { max-width: 920px; }
+.status-list { display: grid; gap: 12px; color: #c6beab; margin: 32px 0 48px; }
+.waitlist { padding: 32px; border: 1px solid rgba(200,168,75,.25); border-radius: 12px; background: #0e1018; }
+.waitlist small { display: block; color: #9a9485; line-height: 1.6; margin-top: 18px; }
+footer { padding: 30px clamp(20px,5vw,72px); border-top: 1px solid rgba(200,168,75,.15); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: #9a9485; font-size: 13px; }
+footer span:first-child { color: #c8a84b; font: 23px Amiri, serif; }
+@media (max-width: 760px) { .hero,.privacy-section { grid-template-columns: 1fr; } .hero { padding-top: 60px; } .hero-art { max-width: 300px; margin: auto; } .card-grid { grid-template-columns: 1fr; } .section { padding-top: 70px; padding-bottom: 70px; } }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: .01ms !important; scroll-behavior: auto !important; } }

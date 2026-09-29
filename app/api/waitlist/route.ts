@@ -2,17 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   try {
-    const { email, source } = await req.json();
+    const { email } = await req.json();
 
-    if (!email || !email.includes("@")) {
+    if (typeof email !== "string" || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
     }
 
     const KIT_FORM_ID = process.env.KIT_FORM_ID;
 
     if (!KIT_FORM_ID) {
-      console.log(`[DEV] Waitlist signup: ${email} (source: ${source})`);
-      return NextResponse.json({ success: true });
+      return NextResponse.json({ error: "Waitlist unavailable" }, { status: 503 });
     }
 
     // Correct endpoint — still uses convertkit.com domain
@@ -25,17 +24,12 @@ export async function POST(req: NextRequest) {
       }
     );
 
-    console.log("Kit response status:", kitRes.status);
-
     if (!kitRes.ok) {
-      const errorText = await kitRes.text();
-      console.error("Kit API error:", errorText);
       return NextResponse.json({ error: "Failed to subscribe" }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });
-  } catch (err) {
-    console.error("Waitlist API error:", err);
+  } catch {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
