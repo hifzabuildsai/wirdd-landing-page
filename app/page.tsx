@@ -32,17 +32,32 @@ export default function Home() {
 
       <section id="top" className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">WIRDD · ANDROID TESTER EDITION</p>
-          <p className="arabic">أَسْتَغْفِرُ اللّٰه</p>
+          <p className="edition-badge"><span className="badge-dot" /> ANDROID TESTER EDITION</p>
+          <p className="hero-wordmark" lang="ar" dir="rtl">وِرد</p>
+          <p className="hero-transliteration">WIRDD</p>
           <h1>Let your dhikr<br /><em>find its rhythm.</em></h1>
           <p className="intro">A quiet companion for counting Astaghfirullah. Start a session, correct the count whenever you need, and return to your day with a clear record.</p>
           <a className="primary-link" href="#testing">See tester status <span aria-hidden="true">↗</span></a>
           <p className="hero-note">Voice and locked-screen counting are awaiting physical Android acceptance testing. No download is offered yet.</p>
         </div>
-        <div className="hero-art" aria-hidden="true">
-          <div className="orbit orbit-outer"><div className="orbit orbit-inner"><div className="orbit-center"><span>وِرد</span><small>ASTAGHFIRULLAH</small></div></div></div>
+        <div className="hero-art">
+          <div className="phone-frame" role="img" aria-label="Illustration of the session counter interface, showing manual correction controls">
+            <div className="phone-notch" aria-hidden="true" />
+            <div className="phone-top"><span>9:41</span><span>●●●</span></div>
+            <p className="phone-eyebrow">SESSION · ILLUSTRATION</p>
+            <div className="phone-ring"><span>20</span></div>
+            <p className="phone-arabic" lang="ar" dir="rtl">أَسْتَغْفِرُ اللّٰه</p>
+            <p className="phone-state">Count shown as an interface example</p>
+            <div className="phone-actions"><span>+1</span><span>−1</span><span>Pause</span></div>
+          </div>
           <p>One moment at a time.</p>
         </div>
+      </section>
+
+      <section className="pullquote" aria-label="Why Wirdd">
+        <p className="eyebrow">WHY WIRDD</p>
+        <blockquote>“I want to remember the recitation, without losing my place in the day.”</blockquote>
+        <p>Wirdd is being built for that quiet rhythm. The hands-free experience is still being checked on real Android phones.</p>
       </section>
 
       <section id="how" className="section">
