@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./site.css";
 
 export const metadata: Metadata = {
-  title: "Wird — وِرد | Hands-Free Dhikr Tracker",
+  title: "Wirdd — وِرد | Astaghfirullah counter",
   description:
-    "Count every Astaghfirullah you say. Without touching your phone. Like a step counter — but for your soul.",
+    "Wirdd is an Android Astaghfirullah counter in physical-device testing. Learn about the tester edition and its privacy model.",
   openGraph: {
-    title: "Wird — وِرد | Hands-Free Dhikr Tracker",
+    title: "Wirdd — وِرد | Android tester edition",
     description:
-      "Count every Astaghfirullah you say. Without touching your phone.",
-    url: "https://wirdd-app.vercel.app",
-    siteName: "Wird",
+      "Astaghfirullah counting for Android. Physical-device testing in progress.",
+    url: "https://wirdd.app",
+    siteName: "Wirdd",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wird — وِرد",
-    description: "The passive dhikr tracker. Like a step counter for your soul.",
+    title: "Wirdd — وِرد",
+    description: "Android Astaghfirullah counter. Tester edition in progress.",
   },
 };
 

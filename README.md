@@ -1,73 +1,23 @@
-# Wird — وِرد · Landing Page.
+# Wirdd website
 
-Next.js 15 · TypeScript · Tailwind CSS v4
-
----
-
-## Setup
+Next.js 16.2.4 site for `wirdd.app`. The page currently describes an Android
+tester candidate. It deliberately offers no APK link until a verified preview
+build and physical-device acceptance exist.
 
 ```bash
-npm install
-npm run dev
+npm ci
+npx tsc --noEmit
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+The waitlist is shown only when `KIT_FORM_ID` is configured at build time.
+The server route returns 503 without it and never logs submitted email
+addresses. With a configured form, the server sends email to Kit only after
+the visitor submits the form. There is no app audio on this website.
 
----
-
-## Connect Kit (email waitlist)
-
-1. Copy `.env.example` to `.env.local`
-2. Go to [app.kit.com](https://app.kit.com) → Forms → your "Wird Waitlist" form
-3. Copy the form ID from the URL (the number in `app.kit.com/forms/XXXXXXX`)
-4. Paste it in `.env.local`:
-   ```
-   KIT_FORM_ID=your_actual_id
-   ```
-5. Restart dev server
-
-> **Note:** Without `KIT_FORM_ID`, the form still works in dev — signups are just logged to the terminal instead of Kit.
-
----
-
-## Deploy to Vercel
-
-```bash
-# Push to GitHub first, then:
-# Vercel dashboard → New Project → Import from GitHub
-# Add environment variable: KIT_FORM_ID = your_form_id
-# Deploy
-```
-
-Or via CLI:
-```bash
-npx vercel --prod
-```
-
-Set the env var in Vercel dashboard → Settings → Environment Variables.
-
----
-
-## Project Structure
-
-```
-wird-landing/
-├── app/
-│   ├── api/waitlist/route.ts   ← Kit API route (server-side)
-│   ├── globals.css             ← Tailwind v4 + custom theme
-│   ├── layout.tsx              ← Root layout + metadata
-│   └── page.tsx                ← Full landing page
-├── components/
-│   ├── DemoPhone.tsx           ← Animated phone mockup
-│   ├── ScrollReveal.tsx        ← Intersection observer
-│   └── WaitlistForm.tsx        ← Email form (client component)
-├── .env.example
-├── next.config.ts
-├── package.json
-├── postcss.config.mjs
-└── tsconfig.json
-```
-
----
-
-Built by Hifza Zafar · Karachi, Pakistan · April 2026
+Update the status and install link only after the Android app's Arabic voice
+counting and locked-screen flow have physical-device evidence. Coordinate
+the APK link, supported Android versions, privacy notes, and release wording
+with the app README. For tester support, invitees currently reply to their
+inviter; no domain mailbox has been verified.
